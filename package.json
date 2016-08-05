@@ -1,0 +1,42 @@
+{
+  "name": "npmTooling",
+  "version": "0.0.1",
+  "description": "Assets for my Tooling with NPM Scripts course at Lynda.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/planetoftheweb/npmtooling.git"
+  },
+  "author": "Ray Villalobos",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel dev:*",
+      "dev:sass-dev": "node-sass --output-style expanded process/scss/style.scss -o builds/development/css",
+      "dev:sass-watch": "onchange 'process/scss/**/*.scss' -- npm run dev:sass-dev",
+      "dev:js-transform": "babel process/js/**/*.js -o builds/development/js/script.js --source-maps",
+      "dev:js-watch": "onchange 'process/js/**/*.js' -- npm run dev:js-transform",
+      "dev:serve-dev": "live-server builds/development",
+    "build": "npm-run-all prod:*",
+      "prod:html-minify": "mkdir -p builds/production && html-minifier --collapse-whitespace builds/development/index.html > builds/production/index.html",
+      "prod:img-compress": "imagemin builds/development/images/**/*.* --out-dir=builds/production/images",
+      "prod:sass-prod": "node-sass --output-style compressed process/scss/style.scss -o builds/production/css",
+      "prod:js-uglify": "mkdir -p builds/production/js && uglifyjs builds/development/js/script.js --compress --mangle --output builds/production/js/script.js",
+      "prod:serve-prod": "live-server builds/production"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "html-minifier": "^3.0.2",
+    "imagemin": "^5.2.2",
+    "imagemin-cli": "^3.0.0",
+    "live-server": "^1.0.0",
+    "minify": "^2.0.11",
+    "node-sass": "^3.8.0",
+    "npm-run-all": "^2.3.0",
+    "onchange": "^2.5.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
