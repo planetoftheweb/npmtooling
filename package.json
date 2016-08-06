@@ -6,5 +6,11 @@
     "type": "git",
     "url": "https://github.com/planetoftheweb/npmtooling.git"
   },
-  "author": "Ray Villalobos"
+  "author": "Ray Villalobos",
+  "scripts": {
+    "serve-dev" : "live-server builds/development"
+  },
+  "devDependencies": {
+    "live-server": "^1.0.0"
+  }
 }
