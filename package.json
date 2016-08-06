@@ -8,7 +8,10 @@
   },
   "author": "Ray Villalobos",
   "scripts": {
-    "serve-dev" : "live-server builds/development"
+    "serve-dev" : "live-server builds/development",
+    "prod-setup" : "mkdirp builds/production/js",
+    "start" : "npm run serve-dev",
+    "prestart": "npm run prod-setup"
   },
   "devDependencies": {
     "live-server": "^1.0.0"
