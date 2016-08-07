@@ -19,12 +19,17 @@
     "dev:js-transform": "babel process/js/**/*.js --watch --out-file builds/development/js/script.js --source-maps",
     "build": "npm-run-all prod:*",
     "prod:setup": "mkdirp builds/production/js",
-    "prod:html-minify": "html-minifier --collapse-whitespace builds/development/index.html > builds/production/index.html"
+    "prod:html-minify": "html-minifier --collapse-whitespace builds/development/index.html > builds/production/index.html",
+    "prod:img-compress": "imagemin builds/development/images/**/*.* --out-dir=builds/production/images --plugin=jpeg-recompress --plugin=svgo"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.13.2",
     "html-minifier": "^3.0.2",
+    "imagemin": "^5.2.2",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-svgo": "^5.1.0",
     "live-server": "^1.0.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^3.8.0",
