@@ -8,12 +8,14 @@
   },
   "author": "Ray Villalobos",
   "scripts": {
-    "serve-dev" : "live-server builds/development",
-    "prod-setup" : "mkdirp builds/production/js",
-    "start" : "npm run serve-dev",
-    "prestart": "npm run prod-setup"
+    "serve-dev": "live-server builds/development",
+    "prod-setup": "mkdirp builds/production/js",
+    "start": "npm run serve-dev",
+    "prestart": "npm run prod-setup",
+    "sass-dev": "node-sass --watch process/scss --output-style expanded --source-map true  process/scss/style.scss --output builds/development/css"
   },
   "devDependencies": {
-    "live-server": "^1.0.0"
+    "live-server": "^1.0.0",
+    "node-sass": "^3.8.0"
   }
 }

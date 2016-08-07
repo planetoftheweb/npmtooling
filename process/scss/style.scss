@@ -1,19 +1,37 @@
+// Variables
+
+$font-default: "Roboto Slab", sans-serif;
+$font-alternate: "Open Sans", sans-serif;
+
+// Colors
+$light-green: #E0E6AE;
+$medium-blue: #586D74;
+$medium-green: #279182;
+$light-yellow: #E4D29D;
+$medium-yellow: #EEC856;
+$bright-yellow: #EEF08A;
+$dark-yellow: #CDAE50;
+$medium-red: #E15D5F;
+$dark-green: #819A2D;
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
+
 /**  Basic Page CSS **/
-body {
-  font-family: "Roboto Slab", sans-serif;
+body{
+  font-family: $font-default;
   font-weight: 300;
   font-size: 2em;
   position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", sans-serif;
+  font-family: $font-alternate;
   font-weight: 100;
   margin: 0;
 }
 
 /**  Header Navigation **/
+
 header .navbar {
   padding: 30px 0;
   transition: all .5s ease-out;
@@ -30,29 +48,30 @@ header .navbar-default .navbar-nav a {
 }
 
 header .navbar-default .navbar-nav a:hover {
-  color: #EEC856;
+  color: $medium-yellow;
 }
 
 header .navbar-default .navbar-nav .active a {
   font-weight: 700;
-  color: #EEC856;
+  color: $medium-yellow;
   background: transparent;
-  border-bottom: 4px solid #EEC856;
+  border-bottom: 4px solid $medium-yellow;
   text-shadow: none;
 }
 
 header .navbar-default .navbar-nav .active a:focus {
-  color: #EEC856;
+  color: $medium-yellow;
   background: transparent;
 }
 
 header .navbar-default .navbar-nav .active a:hover {
-  color: #E15D5F;
+  color: $medium-red;
   background: transparent;
   text-shadow: none;
 }
 
 /**  Navbar Brand **/
+
 header .navbar-brand {
   background: url(../images/wisdompetlogo.svg);
   background-repeat: no-repeat;
@@ -77,22 +96,24 @@ header .navbar-brand span.subhead {
 
 /**  Navbar Toggle **/
 header .navbar-toggle {
-  background-color: #279182;
+  background-color: $medium-green;
 }
 
 header .navbar-default .navbar-toggle .icon-bar {
   background-color: white;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen
+and (max-width: 768px) {
   header .navbar-collapse.in {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0, .5);
   }
 }
 
 /**  nav inbody **/
+
 header .inbody {
-  background: rgba(104, 73, 49, 0.9);
+  background: rgba(104,73,49,.9);
 }
 
 header .navbar.inbody {
@@ -122,6 +143,7 @@ header .inbody .navbar-brand span.subhead {
 }
 
 /**  Carousel Fade **/
+
 .carousel.fade {
   opacity: 1;
 }
@@ -163,6 +185,7 @@ header .inbody .navbar-brand span.subhead {
   height: 100%;
 }
 
+
 /**  Page **/
 .page {
   padding: 50px 0;
@@ -175,12 +198,13 @@ header .inbody .navbar-brand span.subhead {
 
 /**  Page -- Mission **/
 #mission {
-  background-color: #E4D29D;
-  background-image: linear-gradient(to bottom, #EEF08A, #819A2D);
-  border-top: 20px solid rgba(238, 200, 86, 0.5);
+  background-color: $light-yellow;
+  background-image: linear-gradient(to bottom, $bright-yellow, $dark-green);
+  border-top: 20px solid rgba(238, 200, 86, .5);
 }
 
 /**  Page -- Services **/
+
 .service {
   margin: 20px 0;
   text-align: center;
@@ -197,16 +221,19 @@ header .inbody .navbar-brand span.subhead {
   margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 450px) and (max-width: 768px) {
+@media only screen
+and (min-width: 450px)
+and (max-width: 768px) {
   .service p {
     padding: 0 20%;
   }
 }
 
 /**  Page -- Staff **/
+
 #staff {
-  background-color: #E4D29D;
-  background-image: linear-gradient(to bottom, #E4D29D, #CDAE50);
+  background-color: $light-yellow;
+  background-image: linear-gradient(to bottom, $light-yellow, $dark-yellow);
 }
 
 .doctor {
@@ -229,6 +256,7 @@ header .inbody .navbar-brand span.subhead {
 }
 
 /**  Page -- Testimonials **/
+
 #testimonials {
   padding: 0;
 }
@@ -246,7 +274,7 @@ header .inbody .navbar-brand span.subhead {
 }
 
 #testimonials blockquote .quote {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255,255,255,.6);
   padding: 20px 5%;
   position: absolute;
   bottom: 0;
@@ -256,7 +284,7 @@ header .inbody .navbar-brand span.subhead {
 }
 
 #testimonials blockquote .quote:hover {
-  background-color: rgba(239, 240, 196, 0.9);
+  background-color: rgba(239,240,196,.9);
 }
 
 #testimonials #janeh {
@@ -285,12 +313,14 @@ header .inbody .navbar-brand span.subhead {
   font-weight: 400;
 }
 
+
 #testimonials .quote .more, #testimonials .customer {
   opacity: 0;
   font-size: 0;
   line-height: 0;
   padding-top: 10px;
 }
+
 
 #testimonials .quote:hover .more {
   font-family: "Open Sans", sans-serif;
@@ -316,25 +346,26 @@ header .inbody .navbar-brand span.subhead {
 }
 
 /**  Footer **/
+
 footer {
-  background: #586D74;
+  background: $medium-blue;
   color: white;
   font-size: .8em;
   padding: 20px 0 40px 0;
 }
 
 footer a {
-  color: #E0E6AE;
+  color: $light-green;
 }
 
 footer a:hover {
-  color: #EEC856 !important;
+  color: $medium-yellow !important;
 }
 
 footer .phone {
   font-size: 1.4em;
   font-weight: 700;
-  color: #E0E6AE;
+  color: $light-green;
 }
 
 footer .navbar {
@@ -348,11 +379,9 @@ footer .navbar-default {
   margin-right: 40px;
 }
 
-footer .navbar-nav > li a {
+footer .navbar-nav>li a {
   padding-top: 0;
   padding-bottom: 0;
   text-decoration: underline;
-  color: #EEC856 !important;
+  color: $medium-yellow !important;
 }
-
-/*# sourceMappingURL=style.css.map */
