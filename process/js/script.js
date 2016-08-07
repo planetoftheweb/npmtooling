@@ -4,10 +4,10 @@ $(function () {
 
   "use scrict";
 
-  var topoffset = 50; //variable for menu height
-  var slideqty = $('#featured .item').length;
-  var randSlide = Math.floor(Math.random() * slideqty);
-  var wheight = $(window).height(); //get the height of the window
+  const topoffset = 50; //variable for menu height
+  const slideqty = $('#featured .item').length;
+  const randSlide = Math.floor(Math.random() * slideqty);
+  let wheight = $(window).height(); //get the height of the window
 
   $('#featured .item').eq(randSlide).addClass('active');
   $('.fullheight').css('height', wheight); //set to window tallness
@@ -76,7 +76,5 @@ $(function () {
     pause: false
   });
 });
-
-//# sourceMappingURL=script.js.map
 
 //# sourceMappingURL=script.js.map
