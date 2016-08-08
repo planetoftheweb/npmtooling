@@ -14,13 +14,16 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel dev:*",
-    "dev:serve-dev": "live-server builds/development",
     "dev:sass-dev": "node-sass --watch process/scss --output-style expanded --source-map true  process/scss/style.scss --output builds/development/css",
     "dev:js-transform": "babel process/js/**/*.js --watch --out-file builds/development/js/script.js --source-maps",
+    "dev:serve": "live-server builds/development",
     "build": "npm-run-all prod:*",
     "prod:setup": "mkdirp builds/production/js",
+    "prod:sass-dev": "node-sass --output-style compressed process/scss/style.scss --output builds/production/css",
+    "prod:js-uglify": "uglifyjs builds/development/js/script.js --compress --mangle --output builds/production/js/script.js",
     "prod:html-minify": "html-minifier --collapse-whitespace builds/development/index.html > builds/production/index.html",
-    "prod:img-compress": "imagemin builds/development/images/**/*.* --out-dir=builds/production/images --plugin=jpeg-recompress --plugin=svgo"
+    "prod:img-compress": "imagemin builds/development/images/**/*.* --out-dir=builds/production/images --plugin=jpeg-recompress --plugin=svgo",
+    "prod:serve": "live-server builds/production"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -33,6 +36,7 @@
     "live-server": "^1.0.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^3.8.0",
-    "npm-run-all": "^2.3.0"
+    "npm-run-all": "^2.3.0",
+    "uglifyjs": "^2.4.10"
   }
 }
